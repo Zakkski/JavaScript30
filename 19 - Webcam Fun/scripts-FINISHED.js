@@ -8,14 +8,14 @@ function getVideo() {
   navigator.mediaDevices.getUserMedia({ video: true, audio: false })
     .then(localMediaStream => {
       console.log(localMediaStream);
-    
-//  DEPRECIATION : 
+
+//  DEPRECIATION :
 //       The following has been depreceated by major browsers as of Chrome and Firefox.
 //       video.src = window.URL.createObjectURL(localMediaStream);
 //       Please refer to these:
 //       Depreceated  - https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL
 //       Newer Syntax - https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/srcObject
-      
+
       video.srcObject = localMediaStream;
       video.play();
     })
@@ -101,7 +101,7 @@ function greenScreen(pixels) {
       pixels.data[i + 3] = 0;
     }
   }
-
+  
   return pixels;
 }
 
