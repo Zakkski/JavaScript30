@@ -54,9 +54,9 @@
 
   const sortedBands = bands.sort((a, b) => cleanBand(a).localeCompare(cleanBand(b)));
 
-  // console.table(sortedBands);
+  console.table(sortedBands);
 
-  document.querySelector('#bands').innterHTML =
+  document.querySelector('#bands').innerHTML =
     sortedBands
       .map(band => `<li>${band}</li>`)
       .join('');
