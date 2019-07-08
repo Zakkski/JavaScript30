@@ -17,9 +17,9 @@
   html {
     box-sizing: border-box;
   }
-  
-  *, *:before, *:after { 
-    box-sizing: inherit; 
+
+  *, *:before, *:after {
+    box-sizing: inherit;
   }
 
   div {
@@ -42,7 +42,20 @@
 
 <button></button>
 <script>
+  const divs = document.querySelectorAll('div');
 
+  // stopPropagation means to stop bubbling
+  function logText(e) {
+    console.log(this.classList.value);
+    // e.stopPropagation();
+  }
+
+// capture: true means you run the function on the way down instead of the way up
+// once: true. means the function will only run once (unbinds function)
+  divs.forEach(div => div.addEventListener('click', logText, {
+    capture: false,
+    once: true
+  }));
 </script>
 </body>
 </html>
